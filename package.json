@@ -1,0 +1,8 @@
+{
+  "name": "mindtrace-backend",
+  "version": "1.0.0",
+  "description": "MindTrace Mental Health Tracker - FastAPI Backend",
+  "engines": {
+    "node": "18.x"
+  }
+}
