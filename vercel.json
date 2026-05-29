@@ -1,29 +1,16 @@
 {
   "version": 2,
-  "builds": [
-    {
-      "src": "api/index.py",
-      "use": "@vercel/python",
-      "config": {
-        "maxLambdaSize": "15mb",
-        "runtime": "python3.9"
-      }
+  "functions": {
+    "api/index.py": {
+      "runtime": "python3.9",
+      "maxDuration": 30,
+      "memory": 512
     }
-  ],
+  },
   "routes": [
     {
       "src": "/(.*)",
       "dest": "api/index.py"
     }
-  ],
-  "env": {
-    "PYTHONUNBUFFERED": "1"
-  },
-  "functions": {
-    "api/index.py": {
-      "maxDuration": 30,
-      "memory": 512
-    }
-  },
-  "buildCommand": "pip install -r requirements.txt"
+  ]
 }
